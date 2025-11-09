@@ -1,16 +1,47 @@
+---
+import Footer from '../components/Footer.astro';
+---
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" class="bg-green-900" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+		<title>Corprecam E.S.P</title>
 	</head>
 	<body>
 		<slot />
+		<Footer />
 	</body>
 </html>
+
+<style is:global>
+	@import "tailwindcss";
+
+	:root {
+		font-family: 'Poppins', sans-serif;
+	}
+
+  @keyframes fade-in-down {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+</style>
 
 <style>
 	html,
