@@ -1,0 +1,38 @@
+---
+import Card from "../components/Card.astro";
+
+const cards = [
+  {
+    img: "https://corprecam.com/wp-content/uploads/2023/10/378794079_709830554516241_5675647282527617397_n.jpg",
+    text: "Crear conciencia de la importancia de reciclar.",
+  },
+  {
+    img: "https://corprecam.com/wp-content/uploads/2023/10/378796833_709830311182932_5705907762737845305_n.jpg",
+    text: "Comprometidos con la educación.",
+  },
+  {
+    img: "https://corprecam.com/wp-content/uploads/2023/10/378816380_709830501182913_4237885763728529953_n.jpg",
+    text: "Fortaleciendo a nuestros recicladores.",
+  },
+];
+---
+
+<section class="w-full bg-white py-12">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2
+      data-aos="fade-up"
+      class="text-3xl md:text-4xl font-semibold text-green-700 mb-12 relative inline-block"
+    >
+      Reciclaje sin reciclador, es basura.
+      <span class="block w-20 h-1 bg-green-500 mx-auto mt-3 rounded-full"></span>
+    </h2>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center"
+    >
+      {cards.map((card) => (
+        <Card img={card.img} text={card.text} />
+      ))}
+    </div>
+  </div>
+</section>

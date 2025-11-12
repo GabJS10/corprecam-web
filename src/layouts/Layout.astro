@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" class="bg-green-900" />
+		<link rel="icon" type="image/png" href="/logo.png" class="bg-green-900" />
 		<meta name="generator" content={Astro.generator} />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 		<title>Corprecam E.S.P</title>
@@ -14,6 +14,8 @@ import Footer from '../components/Footer.astro';
 	<body>
 		<slot />
 		<Footer />
+
+
 
 		<script>
 			import AOS from 'aos';
@@ -45,6 +47,62 @@ import Footer from '../components/Footer.astro';
   @keyframes fade-in-up {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+	@keyframes float {
+    0% { transform: translateY(0) translateX(0); }
+    100% { transform: translateY(-20px) translateX(-30px); }
+  }
+
+	
+	    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes f5at-slow {
+      0% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-40px) translateX(40px); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+
+    @keyframes float-reverse {
+      0% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(40px) translateX(-40px); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+
+    .animate-gradientMove {
+      background-size: 200% 200%;
+      animation: gradientMove 5s ease-in-out infinite;
+    }
+
+    .animate-float-slow {
+      animation: float-slow 18s ease-in-out infinite;
+    }
+
+    .animate-float-reverse {
+      animation: float-reverse 20s ease-in-out infinite;
+    }
+ 
+
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
+
+  .animate-scroll-reverse {
+    animation: scroll-reverse 20s linear infinite;
   }
 
   .animate-fade-in-down {
