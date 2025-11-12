@@ -97,26 +97,22 @@ const layout = layouts[orderIndex % layouts.length];
 
     if (!modal) return;
 
-    // Función para abrir el modal
     const openLightbox = (imgSrc, altText) => {
       lightboxImage.src = imgSrc;
       lightboxImage.alt = altText;
       modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
-      // Opcional: Agregar animación de entrada (ej. escala)
+      document.body.style.overflow = 'hidden';
       lightboxImage.style.transform = 'scale(0.8)';
       setTimeout(() => {
         lightboxImage.style.transform = 'scale(1)';
       }, 50);
     };
 
-    // Función para cerrar el modal
     const closeLightbox = () => {
       modal.classList.add('hidden');
-      document.body.style.overflow = ''; // Restaura el scroll
+      document.body.style.overflow = ''; 
     };
 
-    // 1. Asignar eventos a los triggers (miniaturas)
     triggers.forEach(trigger => {
       trigger.addEventListener('click', () => {
         const imgSrc = trigger.dataset.imgSrc;
@@ -125,16 +121,12 @@ const layout = layouts[orderIndex % layouts.length];
       });
     });
 
-    // 2. Asignar evento al botón de cerrar
     closeButton.addEventListener('click', closeLightbox);
 
-    // 3. Asignar evento al clic fuera de la imagen (en el fondo modal)
     modal.addEventListener('click', (event) => {
-      // Verifica si el clic fue directamente en el fondo modal, no en la imagen
         closeLightbox();
     });
 
-    // 4. Asignar evento a la tecla ESC
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
         closeLightbox();
