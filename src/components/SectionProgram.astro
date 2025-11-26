@@ -9,12 +9,12 @@ interface Props {
 const { title, description, images, orderIndex = 0 } = Astro.props
 const reverse = orderIndex % 2 !== 0
 const layouts = [
-  "grid-cols-2",
-  "grid-cols-2 grid-rows-2 [&>*:first-child]:col-span-1 [&>*:first-child]:row-span-2",
+"grid-cols-2 grid-rows-3 [&>*:first-child]:row-span-2",  
+"grid-cols-2 grid-rows-2 [&>*:first-child]:col-span-1 [&>*:first-child]:row-span-2",
   "grid-cols-2 grid-rows-2 [&>*:first-child]:col-span-2",
   "grid-cols-[2fr_1fr] grid-rows-2 [&>*:nth-child(2)]:row-span-2",
   "grid-cols-2 grid-rows-2 [&>*:nth-child(2)]:col-span-1 [&>*:nth-child(2)]:row-span-2",
-  "grid-cols-2 grid-rows-3 [&>*:first-child]:row-span-2",
+  ,
 ];
 const layout = layouts[orderIndex % layouts.length];
 ---
