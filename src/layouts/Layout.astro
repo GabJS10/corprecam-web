@@ -44,6 +44,16 @@ import Footer from '../components/Footer.astro';
     100% { opacity: 1; transform: translateY(0); }
   }
 
+  @keyframes fade-in-up-init {
+					0% {
+						opacity: 0;
+						transform: translateY(20px);}
+					100% {
+						opacity: 1;
+						transform: translateY(0);}
+				}
+
+
   @keyframes fade-in-up {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -81,6 +91,10 @@ import Footer from '../components/Footer.astro';
       0% { transform: translateY(0) translateX(0); }
       50% { transform: translateY(40px) translateX(-40px); }
       100% { transform: translateY(0) translateX(0); }
+    }
+
+    .animate-fade-in-up-init {
+      animation: fade-in-up-init 0.8s ease-out forwards;
     }
 
     .animate-gradientMove {
